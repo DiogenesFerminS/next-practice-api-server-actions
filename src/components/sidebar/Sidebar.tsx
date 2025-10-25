@@ -3,7 +3,8 @@ import Link from "next/link"
 import { CiBookmarkCheck, CiLogout } from "react-icons/ci"
 import SidebarItem from "./SidebarItem"
 import { SidebarIconProps } from "./interfaces"
-import { IoCheckboxOutline, IoListOutline } from "react-icons/io5"
+import { IoCheckboxOutline, IoCodeOutline, IoListOutline } from "react-icons/io5"
+import { GiClothes } from "react-icons/gi"
 
 const sidebarItems: SidebarIconProps[] = [
     {
@@ -20,6 +21,17 @@ const sidebarItems: SidebarIconProps[] = [
         icon: <IoListOutline size={30}/>,
         path: '/dashboard/server-todos',
         title: 'Server Actions'
+    },
+    {
+      icon: <IoCodeOutline size={30}/>,
+      path: '/dashboard/cookies',
+      title: 'Cookies'
+    }
+    ,
+    {
+      icon: <GiClothes size={30}/>,
+      path: '/dashboard/products',
+      title: 'Products'
     }
 ]
 
