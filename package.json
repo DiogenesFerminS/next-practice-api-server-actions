@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@midudev/tailwind-animations": "^0.2.0",
     "@prisma/client": "^6.17.0",
     "@prisma/extension-accelerate": "^2.0.2",
     "cookies-next": "^6.1.1",

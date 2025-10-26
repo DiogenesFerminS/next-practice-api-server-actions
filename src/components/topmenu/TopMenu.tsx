@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { CiChat1, CiMenuBurger, CiSearch, CiShoppingBasket } from 'react-icons/ci'
 
 const TopMenu = async () => {
@@ -14,6 +15,8 @@ const TopMenu = async () => {
     })
     return totalItems
   }
+
+  const totalCountProducts = getTotalCount();
 
   return (
     <div className="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5 text-gray-600">
@@ -46,10 +49,12 @@ const TopMenu = async () => {
               <button className="flex items-center justify-center w-10 h-10 rounded-xl border bg-gray-100 focus:bg-gray-100 active:bg-gray-200">
                 <CiChat1 size={25} />
               </button>
-              <button className="flex items-center justify-center h-10 rounded-xl border bg-gray-100 focus:bg-gray-100 active:bg-gray-200">
-                <span className='text-sm p-1'>{getTotalCount()}</span>
+              <Link
+                href={'/dashboard/cart'} 
+                className="flex items-center justify-center h-10 rounded-xl border bg-gray-100 focus:bg-gray-100 active:bg-gray-200">
+                {totalCountProducts > 0 ? (<span className='text-sm p-1 animate-fade-in'>{totalCountProducts}</span>) : <></>}
                 <CiShoppingBasket size={25}/>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
